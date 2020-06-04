@@ -1,0 +1,80 @@
+body 
+{
+    background-color: #000;
+}
+
+#landing-header 
+{
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+#landing-header h1 {
+    color: #fff;
+}
+
+.slideshow { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow li { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+    background-image: url(https://www.hospitalitydesign.com/wp-content/uploads/2018Awards-Projects-HotelLifestyle3.png) 
+  }
+  .slideshow li:nth-child(2) { 
+    background-image: url(https://q-cf.bstatic.com/images/hotel/max1024x768/344/34435809.jpg);
+    animation-delay: 10s; 
+  }
+  .slideshow li:nth-child(3) { 
+    background-image: url(https://images.wallpaperscraft.com/image/hotel_interior_furniture_design_hallway_107062_1920x1080.jpg);
+    animation-delay: 20s; 
+  }
+  .slideshow li:nth-child(4) { 
+    background-image: url(https://i.pinimg.com/originals/46/83/1b/46831bd21d420e52fbd1e2ca5ea11402.jpg);
+    animation-delay: 30s; 
+  }
+  .slideshow li:nth-child(5) { 
+    background-image: url(https://ae01.alicdn.com/kf/HTB19Pl6NVXXXXbHapXXq6xXFXXXM/beibehang-Custom-3D-wallpaper-modern-painting-bedroom-hotel-background-wallpaper-HD-forest-natural-art-photo-wallpaper.jpg);
+    animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+    0% { 
+      opacity: 0; 
+      animation-timing-function: ease-in;
+    }
+    10% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    20% {
+      opacity: 1
+    }
+    30% {
+      opacity: 0
+    }
+}
+

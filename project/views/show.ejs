@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h1 class="pull-center"><a><%= hotel.name %></a></h1>
+    <div style="background-color: blueviolet; padding:inherit; color: lavender;">
+        <b><i><h2>Rs- <%= hotel.price %></h2></i></b>
+    </div>
+    <div class="thumbnail">
+        <img class="img-responsive" src="<%= hotel.image %>">
+    </div>
+    <h3><p><%= hotel.description %></p></h3>
+    <h4 class="pull-right">
+        <a href="/hotels/<%= hotel._id %>/book" class="btn btn-warning">Book Now</a>
+        <% if(currentUser && currentUser.username === "admin"){ %>
+            <a href="/hotels/<%= hotel._id %>/edit" class="btn btn-success">Edit</a>
+            <form style="display: inline;" action="/hotels/<%= hotel._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+        <% } %>
+    </h4>
+</div>
+
+<%- include('partials/footer') %>

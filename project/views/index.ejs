@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to STAY ON!</h1>
+            <p>Book hotels online of your choice at reasonable prices with full security and safety.</p>
+        </div>
+    </header>
+    <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+        <% hotels.forEach(function(hotel){ %>
+            <div class="col-md-4 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= hotel.image %>">
+                    <div class="caption">
+                        <h4><b><%= hotel.name %></b>  Rs- <%= hotel.price %></h4>
+                    </div>
+                    <p>
+                        <a href="/hotels/<%= hotel._id %>" class="btn btn-primary">More Info</a> 
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

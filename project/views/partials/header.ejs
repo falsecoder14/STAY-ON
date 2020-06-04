@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Stay on</title>
+        <link rel="icon" type="jpeg" href="https://images.crocs.com/is/image/Crocs/10007012_001_ALT100?&fmt=jpeg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,6,0&iccEmbed=0&printRes=72&wid=440&hei=365">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">STAY ON</a>
+                    <a class="navbar-brand" href="/hotels">Home</a>
+                    <% if(currentUser && currentUser.username === "admin"){ %>
+                        <a class="navbar-brand" href="/hotels/new">Add new Hotel</a>
+                    <% } %>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <% if(!currentUser){ %>
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/register">Sign Up</a></li>
+                        <% }else{ %>
+                            <li><a href="">Signed in as <%= currentUser.username %></a></li>
+                            <li><a href="/hotels/<%= currentUser._id %>/mybookings">My Bookings</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
